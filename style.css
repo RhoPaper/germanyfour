@@ -1,0 +1,48 @@
+body,html{
+    background-color:black;
+    margin: 0;
+    height: 100%;
+}
+
+h1{
+    color: white;
+}
+
+#div1 {
+    height: 100%;
+    display: grid;
+    place-items: center;
+    }
+
+    .hover-slide-button {
+        position: relative;
+        display: inline-block;
+        padding: 15px 40px;
+        color: white; /* 默认文字颜色为白色 */
+        background-color: black; /* 按钮背景颜色为黑色 */
+        text-decoration: none;
+        transition: color 0.3s ease;
+        z-index: 2; /* 确保按钮文字在滑块之上 */
+        overflow: hidden; /* 确保滑块不会超出按钮边界 */
+    }
+    
+    .hover-slide-button::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0%; /* 初始宽度为0% */
+        height: 100%;
+        background-color: white; /* 滑块背景颜色设置为白色 */
+        transition: width 0.5s ease; /* 滑块宽度过渡效果 */
+        z-index: 1; /* 确保滑块在按钮文字之下 */
+    }
+    
+    .hover-slide-button:hover {
+        color: black; /* 鼠标悬停时文字颜色变为黑色 */
+    }
+    
+    .hover-slide-button:hover::before {
+        width: 100%; /* 鼠标悬停时滑块宽度变为100% */
+    }
+    
